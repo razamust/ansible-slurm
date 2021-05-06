@@ -14,7 +14,8 @@
     mode: 0400
   with_items:
     - name: slurmdbd.conf
-      config: __slurmdbd_config_merged
+      config: slurmdbd_config
+  when: item.config in vars
   notify:
     - reload slurmdbd
 
