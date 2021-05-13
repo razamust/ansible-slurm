@@ -19,9 +19,6 @@
 - name: Import common tasks
   import_tasks: common.yml
   
-- name: Install docker
-  include_tasks: docker.yml
-
 - name: Ensure slurmdbd is enabled and running
   service:
     name: "{{ slurmdbd_service_name }}"
