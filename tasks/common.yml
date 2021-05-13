@@ -30,6 +30,6 @@
   include_tasks: munge.yml
   when: slurm_configure_munge
   
-  - name: Install docker
+- name: Install docker
   include_tasks: docker.yml
   
