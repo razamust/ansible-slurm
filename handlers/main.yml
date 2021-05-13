@@ -37,3 +37,8 @@
     name: "{{ slurmd_service_name }}"
     state: restarted
   when: "'slurmexechosts' in group_names or 'exec' in slurm_roles"
+  
+- name: restart docker
+      service: 
+        name: docker 
+        state: restarted
