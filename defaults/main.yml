@@ -69,11 +69,6 @@ __slurm_debian_packages:
   slurmd: [slurm-wlm]
   slurmdbd: [slurmdbd]
   
-__create_containers: 4
-  default_container_name: docker
-  default_container_image: ubuntu
-  default_container_command: sleep 1d
-
 __slurm_redhat_packages:
   client: [slurm, munge]
   slurmctld: [munge, slurm, slurm-slurmctld]
