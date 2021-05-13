@@ -1,4 +1,4 @@
 ---
-- name: systemd reload
-  systemd:
-    daemon_reload: yes
+- name: Install docker
+  install_task: docker.yml
+    
