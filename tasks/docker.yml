@@ -1,10 +1,6 @@
 ---
 
-- name: install dependency
-      apt:
-        name: "{{item}}"
-        state: present
-        update_cache: yes
+- name: install dependency  
       loop:
         - apt-transport-https
         - ca-certificates
@@ -32,7 +28,7 @@
         - docker-ce-cli
         - containerd.io
 
--   name: Start service docker
+- name: Start service docker
      service:
       name: docker
       state: started
