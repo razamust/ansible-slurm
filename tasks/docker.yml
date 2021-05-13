@@ -1,3 +1,5 @@
+---
+
 - hosts: all
   tasks:
     - name: Yum repolist for Docker
