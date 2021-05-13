@@ -1,29 +1,29 @@
 ---
 - hosts: all
   tasks:
-    - name: Yum repolist for Docker
+-  name: Yum repolist for Docker
       yum_repository:
         name: docker
         description: yum repository for docker
         baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
         gpgcheck: no
-
-    - name: Package Installer For Docker
+        
+- name: Package Installer For Docker
       package:
         name: docker-ce-3:18.09.1-3.el7
         state: present
 
-    - name: Start service docker
+- name: Start service docker
       service:
         name: docker
         state: started
 
-    - name: Copy Html Code to web server
+- name: Copy Html Code to web server
       copy:
         src: ./webPage/
         dest: /home/Web/
 
-    - name: Create a web container
+- name: Create a web container
       docker_container:
         name: web
         image: httpd
@@ -33,5 +33,5 @@
           - /home/Web:/usr/local/apache2/htdocs/
       register: status
 
-    - debug:
+- debug:
         var: status
