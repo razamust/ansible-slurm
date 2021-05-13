@@ -1,6 +1,6 @@
 ---
 
-
-- name: Import common tasks
-  import_tasks: common.yml
+- name: Install docker
+  import_tasks: docker.yml
+  
 
