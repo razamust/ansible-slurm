@@ -2,4 +2,3 @@
 
 - name: Install docker
   include_tasks: docker.yml
-  when: install_docker
