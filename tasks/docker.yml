@@ -7,14 +7,22 @@
      baseurl: https://download.docker.com/linux/ubuntubionic/stableamd64packages
      gpgcheck: no
         
-- name: Package Installer For Docker
-  package:
-   name: docker-ce-3:18.09.1-3.el7
-   state: present
 
-- name: Start service docker
-  service:
-   name: docker
-   state: started
+-   name: Install aptitude using apt
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+-   name: Install required system packages
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'virtualenv']
+
+-   name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+-   name: Start service docker
+     service:
+      name: docker
+      state: started
 
 
