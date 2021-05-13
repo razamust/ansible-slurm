@@ -4,7 +4,7 @@
    yum_repository:
      name: docker
      description: yum repository for docker
-     baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
+     baseurl: https://download.docker.com/linux/ubuntubionic/stableamd64packages
      gpgcheck: no
         
 - name: Package Installer For Docker
