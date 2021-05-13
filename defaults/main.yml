@@ -14,7 +14,6 @@ slurm_configure_munge: yes
 
 # Service names are the same on both distros since ??
 slurmd_service_name: slurmd
-slurmctld_service_name: slurmctld
 slurmdbd_service_name: slurmdbd
 
 __slurm_user_name: "{{ (slurm_user | default({})).name | default('slurm') }}"
@@ -71,7 +70,6 @@ __slurm_debian_packages:
 
 __slurm_redhat_packages:
   client: [slurm, munge]
-  slurmctld: [munge, slurm, slurm-slurmctld]
   slurmd: [munge, slurm, slurm-slurmd]
   slurmdbd: [munge, slurm-slurmdbd]
 
