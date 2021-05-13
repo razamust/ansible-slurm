@@ -1,24 +1,41 @@
 ---
 
--  name: Yum repolist for Docker
-   yum_repository:
-     name: docker
-     description: yum repository for docker
-     baseurl: https://download.docker.com/linux/ubuntubionic/stableamd64packages
-     gpgcheck: no
+- name: install dependency
+      apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      loop:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg-agent
+        - software-properties-common
     
--   name: Install required system packages
-      apt: name={{ item }} state=latest update_cache=yes
-      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'virtualenv']
-
--   name: Add Docker GPG apt Key
+- name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
+        
+- name: add docker repository to apt
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+        
+- name: install docker
+      apt:
+        name: "{{item}}"
+        state: latest
+        update_cache: yes
+      loop:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
 
 -   name: Start service docker
      service:
       name: docker
       state: started
+      enabled: yes 
 
 
