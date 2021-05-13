@@ -17,20 +17,4 @@
    name: docker
    state: started
 
-- name: Copy Html Code to web server
-  copy:
-  src: ./webPage/
-  dest: /home/Web/
 
-- name: Create a web container
-  docker_container:
-   name: web
-   image: httpd
-   ports: 
-          - "80:80"
-   volumes:
-          - /home/Web:/usr/local/apache2/htdocs/
-   register: status
-
-- debug:
-   var: status
