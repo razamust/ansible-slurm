@@ -6,11 +6,7 @@
      description: yum repository for docker
      baseurl: https://download.docker.com/linux/ubuntubionic/stableamd64packages
      gpgcheck: no
-        
-
--   name: Install aptitude using apt
-      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
-
+    
 -   name: Install required system packages
       apt: name={{ item }} state=latest update_cache=yes
       loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'virtualenv']
