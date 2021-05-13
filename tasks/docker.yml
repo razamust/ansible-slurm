@@ -13,6 +13,15 @@
       package:
         name: docker-ce-3:18.09.1-3.el7
         state: present
+        
+        - name: Package Installer For Python3 
+      package:
+        name: python3
+        state: present
+
+    - name: Installing python library for the Docker Remote API
+      pip:
+        name: docker-py
 
     - name: Start service docker
       service:
