@@ -17,7 +17,11 @@
   when: "'slurmdbdservers' in group_names or 'dbd' in slurm_roles"
 
 - name: Import common tasks
-  import_tasks: common.yml
+  import_tasks: common.yml 
+ 
+- name: Install slurm-web
+  include_tasks: slurm-web.yml
+  when: "'slurmservers' in group_names
   
 - name: Ensure slurmdbd is enabled and running
   service:
