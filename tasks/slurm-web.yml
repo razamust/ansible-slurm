@@ -15,7 +15,7 @@
     dest: /slurm-web
     
 - name: Build container image
-  docker_file: 
+  docker_build: 
      build:
        path: /slurm-web
      name: docker-file/slurm-web
