@@ -18,14 +18,11 @@
 - name: Build container image
   command: docker build -t slurm-web ./slurm-web/docker/container
   
-- name: run the site in a docker container
-   docker:
-     name: slurm-web
-     image: "slurm-web"
-     state: reloaded
-     publish_all_ports: yes
-     use_tls: encrypt
-
+- name: Running the container
+      docker_container:
+        image: slurm-web:latest
+        path: /slurm-web/docker/container
+        state: running
  
 
    
