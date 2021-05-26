@@ -2,7 +2,7 @@
 
 - name: create build directory
   file:
-        path: /root/slurm-web
+        path: /slurm-web
         state: directory
         owner: root
         group: root
@@ -12,7 +12,7 @@
   git:
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
-    dest: /root/slurm-web/dockerfile 
+    dest: /slurm-web/dockerfile 
     owner: root     
     group: root
     mode: '0644'
