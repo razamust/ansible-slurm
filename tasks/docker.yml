@@ -11,7 +11,7 @@
 - name: Install docker
   package: 
     name: "docker-ce"
-    state: present
+    state: reload
 
 # Uncomment the following to enable insecure registries with Docker
 #- name: ensure docker can use insecure registries in 10.11.0.0/16
