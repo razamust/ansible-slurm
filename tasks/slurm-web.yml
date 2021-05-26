@@ -18,9 +18,9 @@
 - name: Build container image
   command: docker build -t slurm-web ./slurm-web/docker/container
   
-- name: Running docker container
+- name: Run docker container
   command: docker run slurm-web
-  state: running
+  
  
 
    
