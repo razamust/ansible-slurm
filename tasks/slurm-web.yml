@@ -13,11 +13,13 @@
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
     dest: /slurm-web
+
+- name: change directory
+  command: cd docker/container
     
 - name: Build container image
   command: docker build -t slurm-web .
-  path: /slurm-web 
-
+ 
 
    
    
