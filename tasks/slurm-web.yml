@@ -12,7 +12,7 @@
   git:
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
-    dest: /slurm-web/dockerfile 
+    dest: /slurm-web
     
 - name: Build an image and push
     docker_image:
