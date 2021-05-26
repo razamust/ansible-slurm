@@ -3,7 +3,7 @@
 - name: create build directory
   file:
     path: /slurm-web/docker/container
-    state: touch
+    state: directory
     owner: root
     group: root
     mode: '0755'
