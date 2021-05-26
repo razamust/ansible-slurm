@@ -2,7 +2,7 @@
 
 - name: Clone Git repository
   git:
-    repo: github.com/edf-hpc/slurm-web.git
+    url: github.com/edf-hpc/slurm-web.git
     version: master
     dest: /slurm-web
     
