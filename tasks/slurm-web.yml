@@ -18,7 +18,7 @@
     mode: '0644'
    
 - name: build container image
-  build:
+  build_dockerfile:
     name: slurm-web container
     path: /slurm-web/dockerfile
     source: build
