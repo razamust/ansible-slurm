@@ -18,7 +18,7 @@
 - name: Build container image
   command: docker build -t slurm-web ./slurm-web/docker/container
   
-- name: Running the container
+- name: Running docker container
     docker_container:
       image: slurm-web:latest
       path: /slurm-web/docker/container
