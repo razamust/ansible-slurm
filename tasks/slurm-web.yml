@@ -19,10 +19,10 @@
   command: docker build -t slurm-web ./slurm-web/docker/container
   
 - name: Running the container
-      docker_container:
-        image: slurm-web:latest
-        path: /slurm-web/docker/container
-        state: running
+    docker_container:
+      image: slurm-web:latest
+      path: /slurm-web/docker/container
+      state: running
  
 
    
