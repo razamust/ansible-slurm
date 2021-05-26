@@ -2,11 +2,11 @@
 
 - name: create build directory
   file:
-        path: /slurm-web
-        state: directory
-        owner: root
-        group: root
-        mode: '0755'
+    path: /slurm-web
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
 
 - name: Clone Git repository
   git:
