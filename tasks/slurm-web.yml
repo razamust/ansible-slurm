@@ -14,13 +14,15 @@
     version: master
     dest: /slurm-web/dockerfile 
     
-- name: build container image
+- name: Build an image and push
     docker_image:
-      name: democontainer:v1.0
-      build:
-        path: /slurm-web/dockerfile
+        build:
+          path: /slurm-web
+        name: docker-file/slurm-web
+        tag: v1
         source: build
-      state: present
+      delegate_to: 127.0.0.1
+  
 
 
    
