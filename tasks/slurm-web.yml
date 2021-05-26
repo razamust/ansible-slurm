@@ -11,6 +11,6 @@
     name: slurm-web
     command: docker build -t slurm-web ./site
     image: "slurm-web"
-    state: present
+    state: reloaded
         
     
