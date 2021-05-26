@@ -15,7 +15,7 @@
     dest: /slurm-web
 
 - name: change directory
-  command: cd docker/container
+  command: cd slurm-web
     
 - name: Build container image
   command: docker build -t slurm-web .
