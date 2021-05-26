@@ -4,15 +4,13 @@
   git:
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
-    dest: /slurm-web
-    
-- name: build the image
-  command: docker build -t slurm-web ./site
+    dest: /slurm-web 
 
-- name: run the site in a docker container
-  docker:
+- name: Build docker container
+  docker_container:
     name: slurm-web
+    command: docker build -t slurm-web ./site
     image: "slurm-web"
-    state: reloaded
+    state: present
         
     
