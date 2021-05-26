@@ -13,6 +13,16 @@
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
     dest: /slurm-web/dockerfile 
+    
+- name: build container image
+    docker_image:
+      name: democontainer:v1.0
+      build:
+        path: /slurm-web/dockerfile
+        source: build
+      state: present
+
+
    
    
 
