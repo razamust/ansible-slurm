@@ -6,3 +6,18 @@
     version: master
     dest: /slurm-web
     
+- name: Build an image with the command module for a remote docker host
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: build the image
+      command: docker build -t slurm-web ./site
+
+    - name: run the site in a docker container
+      docker:
+        name: slurm-web
+        image: "slurm-web"
+        state: reloaded
+        
+    
