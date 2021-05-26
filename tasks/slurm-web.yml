@@ -2,7 +2,7 @@
 
 - name: create build directory
   file:
-    path: /slurm-web
+    path: /slurm-web/dockerfile
     state: directory
     owner: root
     group: root
@@ -15,7 +15,7 @@
     dest: /slurm-web
     
 - name: Build container image
-  command: docker build -t slurm-web /slurm-web
+  command: docker build -t slurm-web --file= slurm-web
  
 
    
