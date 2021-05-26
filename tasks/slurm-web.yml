@@ -1,16 +1,27 @@
 ---
 
+- name: create build directory
+      file:
+        path: /root/slurm-web
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
 - name: Clone Git repository
   git:
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
-    dest: /slurm-web 
-
-- name: Build docker container
-  docker:
-    name: slurm-web
-    command: docker build -t slurm-web ./site
-    image: "slurm-web"
-    state: present
-        
+    dest: /root/slurm-web/dockerfile 
+    owner: root     
+    group: root
+    mode: '0644'
+   
+ - name: build container image
+      docker_image:
+        name: slurm-web container
+        build:
+          path: /root/slurm-web/dockerfile
+          source: build
+        state: present
     
