@@ -13,7 +13,7 @@
     dest: /root/slurm-web-build
     
 - name: Build container
-  command: docker build -t slurm-web ./root/slurm-web-build
+  command: docker build -t slurm-web /root/slurm-web-build/slurm-web
     
 - name: Create container
   command: docker create slurm-web
