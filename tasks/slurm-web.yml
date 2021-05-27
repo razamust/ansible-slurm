@@ -19,7 +19,7 @@
   Build_image: 
     name: slurm-web
     tag: latest
-    path: /slurm-web/docker/container  
+    
     
 - name: Create container
   command: docker create slurm-web
