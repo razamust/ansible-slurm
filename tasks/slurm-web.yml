@@ -13,10 +13,7 @@
     dest: /slurm-web/docker/container
     
 - name: Build container
-  build_container: 
-    name: slurm-web
-    tag: latest
-    
+  command: docker build -t slurm-web ./slurm-web/docker/container
     
 - name: Create container
   command: docker create slurm-web
