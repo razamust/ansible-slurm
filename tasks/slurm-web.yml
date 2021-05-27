@@ -2,7 +2,7 @@
 
 - name: create build directory
   file:
-    path: /slurm-web/docker/container
+    path: /slurm-web/docker/
     state: directory
     owner: root
     group: root
@@ -13,10 +13,10 @@
   git:
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
-    dest: /slurm-web/docker/container
+    dest: /slurm-web/docker/
     
 - name: Build container image
-  command: docker build -t slurm-web ./slurm-web/docker/container
+  command: docker build -t slurm-web ./slurm-web/docker/
   
 - name: Create container
   command: docker create slurm-web
