@@ -25,7 +25,7 @@
   command: docker create slurm-web
   
 - name: Run docker container
-  command: docker run slurm-web
+  command: docker run slurm-web:latest
   
  
 
