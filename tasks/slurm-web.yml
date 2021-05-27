@@ -15,9 +15,6 @@
     version: master
     dest: /slurm-web/docker/
     
-- name: Build container image
-  command: docker build -t slurm-web 
-  
 - name: Create container
   command: docker create slurm-web
   
