@@ -4,9 +4,6 @@
   file:
     path: /slurm-web/docker/container
     state: directory
-    owner: root
-    group: root
-    mode: '0755'
     recurse: yes 
 
 - name: Clone Git repository
