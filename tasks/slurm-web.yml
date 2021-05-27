@@ -16,7 +16,7 @@
     dest: /slurm-web/docker/container
     
 - name: Build container
-  build: 
+  build_container: 
     name: slurm-web
     tag: latest
     
