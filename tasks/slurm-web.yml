@@ -16,7 +16,7 @@
     dest: /slurm-web/docker/container
     
 - name: Build container image
-  command: docker build -t slurm-web ./slurm-web/
+  command: docker build -t slurm-web ./slurm-web/docker/container
   
 - name: Create container
   command: docker create slurm-web
