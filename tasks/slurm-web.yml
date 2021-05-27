@@ -17,9 +17,6 @@
     
 - name: Build container image
   command: docker build -t slurm-web ./slurm-web/docker/container
- 
-- name: container configuration
-   command: WORKDIR=$HOME/slurm-web
   
 - name: Create container
   command: docker create slurm-web
