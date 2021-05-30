@@ -19,7 +19,7 @@
   command: docker create slurm-web
   
 - name: Run docker container
-  command: /root/slurm-web/docker/run.sh
+  command: /root/slurm-web/docker/run/run.sh
   
  
 
