@@ -2,7 +2,7 @@
 
 - name: create build directory
   file:
-    path: /root/slurm-web-build
+    path: /root/slurm-web
     state: directory
     recurse: yes 
 
@@ -10,16 +10,16 @@
   git:
     repo: https://github.com/edf-hpc/slurm-web.git
     version: master
-    dest: /root/slurm-web-build
+    dest: /root/slurm-web
     
 - name: Build container
-  command: docker build -t slurm-web /root/slurm-web-build/docker/container
+  command: docker build -t slurm-web /root/slurm-web/docker/container
     
 - name: Create container
   command: docker create slurm-web
   
 - name: Run docker container
-  command: /root/slurm-web-build/docker/run.sh
+  command: /root/slurm-web/docker/run.sh
   
  
 
