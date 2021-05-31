@@ -20,6 +20,13 @@
   
 - name: Run docker container
   command: /root/slurm-web/docker/run/run.sh
+ 
+- name: docker cron setup
+  cron: 
+    name: run container on reboot
+    special_time: reboot
+    job: /root/slurb-web/docker/run/run.sh
+    state: present
   
  
 
